@@ -10,6 +10,15 @@ load_dotenv()
 API_KEY = os.getenv("API_KEY")
 
 app = FastAPI(title="Medicine Lookup API", version="1.0")
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/search")
 def search_medicine(name: str = Query(...)):
