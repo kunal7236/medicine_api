@@ -3,4 +3,4 @@ uvicorn
 pdfplumber
 python-dotenv
 python-multipart
-pymongo
+pymongo>=4.6.1
