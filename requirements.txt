@@ -4,4 +4,4 @@ pdfplumber
 python-dotenv
 python-multipart
 pymongo==3.11
-python-3.11.8
+dnspython
