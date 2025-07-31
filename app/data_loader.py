@@ -35,7 +35,7 @@ def save_data(medicines: List[Dict], updated_at: str = None):
         updated_at = datetime.now().isoformat()
     collection.delete_many({})
     if medicines:
-        sanitized_data = [sanitize_keys(entry) for entry in data]
+        sanitized_data = [sanitize_keys(entry) for entry in medicines]
         collection.insert_many(sanitized_data)
 
     meta.update_one(
